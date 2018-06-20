@@ -29,9 +29,10 @@ namespace ADNS2610
         }
         /*It's not necessary to wait for 100 us
          *because digitalWrite takes a lot of time itself*/
+         //delayMicroseconds( 100 );
     
         /*Set SDIO pin in High-Z state
-         *(see p.13 in the datasheet )*/
+         *( see p.13 in the datasheet )*/
          pinMode( sdioPin, INPUT );
     }
     
@@ -79,6 +80,7 @@ namespace ADNS2610
         }
         /*It's not necessary to wait for 100 us
          *because digitalWrite takes a lot of time itself*/
+         //delayMicroseconds( 100 );
     }
     
     
@@ -128,7 +130,7 @@ namespace ADNS2610
     
         return ReadRegister( SQL_REG_ADDR ) * 2;
     
-        SetNormalLED();
+        //SetNormalLED();
     }
     
     uint8_t Sensor::GetMaxPixel() const
