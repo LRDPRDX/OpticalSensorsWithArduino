@@ -1,13 +1,13 @@
 # OpticalSensorsWithArduino
 
-This is a library 1
+This is a simple C++ library to operate optical sensor ADNS2610 with Arduino Uno. 
 
 ## Getting started
 
 ## Reference Guide
 
 ### `IsAwake` method
-Returns whether or not the LED is awake.
+Returns whether the LED is awake.
 
 ### `GetDX` and `GetDY` methods
 
