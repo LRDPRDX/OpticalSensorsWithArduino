@@ -4,19 +4,24 @@ This is a simple C++ library to operate optical sensor ADNS2610 with Arduino Uno
 
 ## Getting started
 
-## Reference Guide
+Copy 
 
-### `IsAwake` method
-Returns whether the LED is awake.
+## How to use
 
-### `GetDX` and `GetDY` methods
+In order to operate the first you should do is to sensor you should create an object of `Sensor` class in your Arduino application code;
 
-### `GetSQUAL` method
+```
+Sensor opticalSensor( SCK_PIN, SDIO_PIN );
+```
 
-### `GetMaxPixel` and `GetMinPixel` methods
+Then you can use public methods of this class. For example, to get shift along the X-axis:
 
-### `GetPixelAverage` method
+```
+opticalSensor.GetDX();
+```
 
-### `GetImage` method
+Full list of available functions one can find in the *ReferenceGuide.pdf* document in `docs` directory.
 
-### `SetAwakeLED` and `SetNormalLED` methods
+For information about the sensor refer to official documentation (also in `docs` directory).
+
+## Tests
