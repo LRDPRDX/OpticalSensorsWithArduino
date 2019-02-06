@@ -1,20 +1,20 @@
 # OpticalSensorsWithArduino
 
-This is a simple C++ library to operate optical sensor ADNS2610 with Arduino Uno. 
+This is a C++ library for operating optical sensor ADNS2610 with Arduino Uno. 
 
 ## Getting started
 
-Copy 
+Copy
 
 ## How to use
 
-In order to operate the first you should do is to sensor you should create an object of `Sensor` class in your Arduino application code;
+In order to operate the first you should do is to sensor you should create an object of `Sensor` class in your Arduino application code:
 
 ```
 Sensor opticalSensor( SCK_PIN, SDIO_PIN );
 ```
 
-Then you can use public methods of this class. For example, to get shift along the X-axis:
+Then you can use public methods of this class. For example, getting shift along the X-axis is as follows:
 
 ```
 opticalSensor.GetDX();
