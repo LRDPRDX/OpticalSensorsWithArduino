@@ -30,7 +30,7 @@ namespace ADNS2610
     const uint8_t     PXLDAT_REG_VLD    = 0x06;//Valid data bit
     const uint8_t     PXLDAT_REG_SOF    = 0x07;//Start of frame bit
     
-    //Auxialary
+    //Auxiliaries
     const uint16_t    N_PIXELS          = 324;//Sensor's resolution in pixels
     const uint8_t     N_ROWS            = 18;
     const uint8_t     N_COLUMNS         = 18;
@@ -39,12 +39,11 @@ namespace ADNS2610
     /*A sensor is represented by this class*/
     class Sensor 
     {
-        private :
+        protected :
             uint8_t         sckPin;//clock pin
             uint8_t         sdioPin;//data in/output pin 
-            enum            DataDirection { toSensor, fromSensor };
-    
-        protected :
+            enum            DataDirection { TO_SENSOR, FROM_SENSOR };
+
             void            SetAddress( uint8_t address, DataDirection direction ) const;
             uint8_t         ReadRegister( uint8_t address ) const;
             void            WriteRegister( uint8_t address, uint8_t data ) const;

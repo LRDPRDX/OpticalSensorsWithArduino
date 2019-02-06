@@ -12,10 +12,10 @@ namespace ADNS2610
          *MSB = 1   ===>   write operation*/
         switch( direction )
         {
-            case( toSensor ) :
+            case( TO_SENSOR ) :
                 address |= 0b10000000 ;
                 break;
-            case( fromSensor ) :
+            case( FROM_SENSOR ) :
                 address &= ~0b10000000 ;
                 break;
         }
@@ -39,7 +39,7 @@ namespace ADNS2610
     
     uint8_t Sensor::ReadRegister( uint8_t address ) const
     {
-        SetAddress( address, fromSensor );
+        SetAddress( address, FROM_SENSOR );
     
         uint8_t data = 0b00000000;
     
@@ -67,7 +67,7 @@ namespace ADNS2610
     
     void Sensor::WriteRegister( uint8_t address, uint8_t data ) const
     {
-        SetAddress( address, toSensor );
+        SetAddress( address, TO_SENSOR );
     
         pinMode( sdioPin, OUTPUT );
         /*Write data to a register*/
