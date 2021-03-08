@@ -1,4 +1,4 @@
-#include <ADNS2610.h> 
+#include <ADNS2610.h>
 
 /*Arduino pins*/
 #define     SCK_PIN             2
@@ -17,7 +17,7 @@ void setup()
 
 void loop()
 {
-    uint8_t* frame = new uint8_t;
+    uint8_t* frame = new uint8_t[N_PIXELS];
 
     /*returns number of pixels have been read;
      *could be less than 324*/
@@ -25,7 +25,7 @@ void loop()
     /*Send data to serial port*/
     for( uint16_t i = 0; i < nP; i++ )
     {
-        Serial.print( frame[ i ] );
+        Serial.print( frame[i] );
         Serial.print( " " );
     }
     Serial.println();
