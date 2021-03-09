@@ -20,16 +20,16 @@ namespace ADNS2610
     const uint8_t     STRUPR_REG_ADDR   = 0x09;//Shutter upper register
     const uint8_t     STRLWR_REG_ADDR   = 0x0A;//Shutter lower register
     const uint8_t     INVPRD_REG_ADDR   = 0x0B;//Inverse product code register
-    
+
     //Bits of the configuration register
     const uint8_t     CFG_REG_LED       = 0x00;//LED control bit
     const uint8_t     CFG_REG_PWRDWN    = 0x06;//Power down bit
     const uint8_t     CFG_REG_RST       = 0x07;//Reset config bit
-    
+
     //Bits of the Pixel data register
     const uint8_t     PXLDAT_REG_VLD    = 0x06;//Valid data bit
     const uint8_t     PXLDAT_REG_SOF    = 0x07;//Start of frame bit
-    
+
     //Auxiliaries
     const uint16_t    N_PIXELS          = 324;//Sensor's resolution in pixels
     const uint8_t     N_ROWS            = 18;
@@ -37,7 +37,7 @@ namespace ADNS2610
 
 
     /*A sensor is represented by this class*/
-    class Sensor 
+    class Sensor
     {
         protected :
             uint8_t         sckPin;//clock pin
@@ -48,7 +48,7 @@ namespace ADNS2610
             uint8_t         ReadRegister( uint8_t address ) const;
             void            WriteRegister( uint8_t address, uint8_t data ) const;
             void            SetConfigBit( uint8_t bit, bool state ) const;
-    
+
         public :
             Sensor( uint8_t sckPin, uint8_t sdioPin ) :
                 sckPin( sckPin ),
@@ -57,7 +57,7 @@ namespace ADNS2610
                 pinMode( sckPin, OUTPUT );
                 pinMode( sdioPin, INPUT );
             }
-    
+
             bool            IsAwake( ) const;
             signed char     GetDX( ) const;
             signed char     GetDY( ) const;
@@ -66,7 +66,7 @@ namespace ADNS2610
             uint8_t         GetMinPixel( ) const;
             uint8_t         GetPixelAverage( ) const;
             uint16_t        GetImage( uint8_t* frame ) const;
-    
+
             void            SetAwakeLED() const;
             void            SetNormalLED() const;
     };//Sensor
