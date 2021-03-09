@@ -31,5 +31,5 @@ void loop()
     Serial.println();
     delay( 100 );
 
-    delete frame;
+    delete[] frame;
 }
